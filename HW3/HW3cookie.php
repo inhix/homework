@@ -26,16 +26,18 @@ echo '<br><br><br><b>Задача 3:</b> Счетчик посещений<br>
 Используя cookie реализовать вывод на страницу сообщения с количеством посещений страницы<br>
 Ответ:<br><br>';
 
-setcookie('userCookie3', 1);
+setcookie('userCookie3', 1, $options = []);
 
 if (isset($_COOKIE['userCookie3'])) {
-    if ($_COOKIE['userCookie3'] > 1) {
-        echo 'Вы посещали сайт ' . $_COOKIE['userCookie3'] . ' раз.';
-        setcookie('userCookie3', $_COOKIE['userCookie3'] + 1);
+    if ($_COOKIE > 1) {
+        $times = $_COOKIE['userCookie3'];
+        echo 'Вы посещали сайт ' . $times . ' раз.';
+        setcookie('userCookie3', ($times + 1));
     }
-} elseif ($_COOKIE['userCookie3'] === 1){
+} elseif ($_COOKIE === 1) {
+    $times = $_COOKIE;
     echo "Вы зашли на сайт первый раз.";
-    setcookie('userCookie3', $_COOKIE['userCookie3'] + 1);
+    setcookie('userCookie3', $times + 1);
 }
 
 ?>
