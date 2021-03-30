@@ -50,7 +50,7 @@ class Car
      */
     public function fuelConsumption ($distance)
     {
-        $time = $distance / $this->fuel;
+        $time = $distance * $this->fuel / 100;
         return $time;
     }
 
