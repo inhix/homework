@@ -9,12 +9,10 @@ try {
     $mysqlConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $mysqlConnection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $PDOStatement = $mysqlConnection->prepare('SELECT * FROM Books WHERE id > :id');
-    $PDOStatement->bindValue(':id',0);
+    $PDOStatement->bindValue(':id', 0);
     $PDOStatement->execute();
     $booksData = $PDOStatement->fetchAll();
-}
-
-catch (PDOException $e) {
+} catch (PDOException $e) {
     print "Error!" . $e->getMessage() . "</br>";
     die();
 }
