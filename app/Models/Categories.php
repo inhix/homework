@@ -8,6 +8,7 @@
 
 namespace App\Models;
 
+use App\Services\CategoriesService;
 use PDO;
 
 class Categories extends AbstractModel
@@ -15,6 +16,7 @@ class Categories extends AbstractModel
     public function __construct()
     {
         parent::__construct();
+        $this->categoryList = new CategoriesService();
     }
 
     public function getCategoryId()
