@@ -13,6 +13,8 @@ use PDO;
 
 class Categories extends AbstractModel
 {
+    private CategoriesService $categoriesService;
+
     public function __construct()
     {
         parent::__construct();
