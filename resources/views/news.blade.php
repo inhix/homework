@@ -29,10 +29,10 @@
                                 <p>
                                     {{$news->getCategoryTitle()}}
                                 </p>
-
+                                {!! $news->description !!}
                                 <div class="portfolio-links">
                                     <a href="{{$news->getImage()}}" data-gallery="portfolioGallery"
-                                       class="portfolio-lightbox" title="{{$news->description}}"><i
+                                       class="portfolio-lightbox" title="{!! $news->description!!}"><i
                                             class="bx bx-plus" width="100"></i></a>
                                     <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
